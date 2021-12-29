@@ -1,6 +1,5 @@
 import React from "react";
 import 'react-slideshow-image/dist/styles.css';
-import { styled } from '@mui/material/styles';
 import { Stack } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -11,7 +10,6 @@ import { Accordion } from "@mui/material";
 import { AccordionSummary } from "@mui/material";
 import { AccordionDetails } from "@mui/material";
 import { Icon } from "@mui/material";
-import { fontSize } from "@mui/system";
 
 
 function App() {
