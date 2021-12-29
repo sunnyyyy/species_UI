@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -6,6 +8,11 @@
   height: 40vmin;
   pointer-events: none;
 }
+.p {
+  word-break: break-all;
+
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -28,6 +35,20 @@
   color: #61dafb;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +56,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 10px;
+  background: #efefef;
+  text-align: center;
 }
