@@ -1,4 +1,3 @@
-import React from "react";
 import 'react-slideshow-image/dist/styles.css';
 import { Stack } from "@mui/material";
 import Card from '@mui/material/Card';
@@ -10,10 +9,25 @@ import { Accordion } from "@mui/material";
 import { AccordionSummary } from "@mui/material";
 import { AccordionDetails } from "@mui/material";
 import { Icon } from "@mui/material";
-
+import React, { useEffect, useState, Fragment } from "react";
+import Papa from 'papaparse';
 
 function App() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vSd9H_z9WG4plW3fM17uOHyV92zrg4SHi1jZzS48MpJSQwj9VyMt1B38CREDkHul9pfoZc0OhTnTGRa/pub?output=csv', {
+    download: true,
+    header: true,
+    complete: function(results) {
+      var data = results.data
+      setData(data)
+    }
+  })
  
+  }, []);
+
   const main={
     flex: "1px"
   }
@@ -26,38 +40,36 @@ function App() {
     color:"white",
     justifyContent: "center",
     alignItems: "center",
-    height:"180px",
+    width:"auto",
     flex: "1px"
     
   }
   const style2={
     fontSize:"25px",
     borderRadius:"90px",
-    height:"400px",
-    display: "flex",    
-    margin: "auto",
+    display: "flex", 
+    
 
 
   }
   const style3={
     background:"#548B54",
     width:"800px",
-    height:"605px",
     borderRadius:"80px",
     padding:"30px",
     paddingTop:"10px",
     margin:"0px",
-    fontSize:"30px"
+    fontSize:"30px",
+    
 
   }
   const style4={
     background:"grey", 
-    textAlign:"center",
-    width:"990px",
+    width:"520px",
     borderRadius:"80px",
     padding:"40px",
-    margin:"0px",
-    fontSize:"30px"
+    fontSize:"30px",
+    margin:"auto"
    
   }
   const style5={
@@ -66,8 +78,9 @@ function App() {
     margin:"auto",
     borderRadius:"90px",
     padding:"40px",
-    height:"500px",
+    height:"auto",
     display:"flex",   
+    width:"300px"
   }
   const block={
     margin: "auto",
@@ -86,12 +99,11 @@ function App() {
    padding:"30px"
   }
   const imageblock={
-    width:"1200px", 
-    height:"300px",
     margin: "auto",
     borderRadius:"90px",
     backgroundColor:"#2F4F2F",
     padding: "50px",
+    width:"400px"
   
   }
   function changeBackground(e) {
@@ -106,7 +118,7 @@ function App() {
       <div id="demo" style={style1} onMouseEnter={changeBackground}onMouseOut={changeBackground2}>
      
          <img src="header.png" alt="icon" class="center"  style={{
-           height:"180px",
+           height:"160px",
            alignSelf:"center",
            width:"auto"
           }}></img>
@@ -115,7 +127,7 @@ function App() {
        
           <div style={style2}>
             <div style={imageblock}>
-            <Stack direction="row" spacing={2}>
+            <Stack spacing={2}>
 <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
         <CardMedia
@@ -178,38 +190,12 @@ function App() {
         </CardContent>
       </CardActionArea>
     </Card>
+
+    
     </Stack>  
-          </div>
-<div id="demo" style={style3} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
-
-<p>ADD TO THE PROJECT///PROTECT AND MAP ECOLOGIES
-THIN OF A SPECIES AT RISK OF EXTINCTION OR CONTRIBUTE TO ONE ALREADY POSTED. TELL ITS STORY.</p>
-<p>
-Do this through
-Writing something:
-A creative writing piece
-A comic
-Poetry
-A letter or dialogue with your non-human being 
-OR
-Recording something
-OR
-Making something
-drawing/painting/collaging
-</p>
-Some questions that may be used as a starting point are
-What affects both your life and this specie’s life?
-What living things do you both depend on?
-Do you depend on each other ecologically?
-What about your futures? What about your pasts?
-
-  </div>
-
 </div>
 
-
-      
-      <div style={style4}>
+    <div style={style4}>
       <Accordion>
         <AccordionSummary
           expandIcon={<Icon />}
@@ -238,18 +224,43 @@ This website, by the digital artist Sunni (Yu Husuan Liao), provides a place for
         </AccordionDetails>
       </Accordion>
   
+     
+      
       </div>
-      <div style={style4}>
-      To contribute to this project, please follow the instructions --> 
-      </div>
+     
+      <div id="demo" style={style3} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
 
-      <div style={style5}>
-     <p> THIS IS A CREATE RESEARCH PROJECT FOR THE COURSE ‘DESIGNING POLITICS’ FOR THE MA ART AND POLITICS PROGRAMME
-      AT THE UNIVERSITY OF LONDON</p>
-      <div style={nameblock}>KATHERINE DICK</div>
-      <div style={nameblock}>MEGAN CROSSLAND</div>
-      <div style={nameblock}>MIKA TAKAHASHI</div>
+<p>ADD TO THE PROJECT///PROTECT AND MAP ECOLOGIES
+THIN OF A SPECIES AT RISK OF EXTINCTION OR CONTRIBUTE TO ONE ALREADY POSTED. TELL ITS STORY.</p>
+<p>
+Do this through
+Writing something:
+A creative writing piece
+A comic
+Poetry
+A letter or dialogue with your non-human being 
+OR
+Recording something
+OR
+Making something
+drawing/painting/collaging
+</p>
+Some questions that may be used as a starting point are
+What affects both your life and this specie’s life?
+What living things do you both depend on?
+Do you depend on each other ecologically?
+What about your futures? What about your pasts?
+
+  </div>
+  <div style={style5}>
+     THIS IS A CREATE RESEARCH PROJECT FOR THE COURSE ‘DESIGNING POLITICS’ FOR THE MA ART AND POLITICS PROGRAMME
+      AT THE UNIVERSITY OF LONDON  <br />
+     KATHERINE DICK  <br />
+      MEGAN CROSSLAND  <br />
+     MIKA TAKAHASHI  <br />
 </div>
+          </div>
+      
 
       <div style={block}>
       <div style={{backgroundColor:"#0AC92B", borderRadius:"50px", padding:"20px"}}>
@@ -269,7 +280,7 @@ This website, by the digital artist Sunni (Yu Husuan Liao), provides a place for
       </div>  
 </div>
 <div style={{backgroundColor:"#78AB46", borderRadius:"50px", padding:"20px", fontSize:"40px",textAlign:"center"}}>
-CONTACT: STORIESFORSPECIES@GMAIL.COM</div>
+CONTACT: STORIESFORSPECIES@GMAIL.COM</div>     
 </div>
 
   )
