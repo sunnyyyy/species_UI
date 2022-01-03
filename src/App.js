@@ -1,5 +1,4 @@
 import 'react-slideshow-image/dist/styles.css';
-import { Stack } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -48,7 +47,8 @@ function App() {
   const style2={
     fontSize:"25px",
     borderRadius:"90px",
-    display: "flex"
+    display: "flex",
+    paddingTop:"0px"
   }
   const style3={
     background:"#548B54",
@@ -212,6 +212,44 @@ function App() {
       </CardActions>
       </CardActionArea>
     </Card>
+
+    {data.map((item, i) => (
+        <Fragment key={i}>
+    <Accordion>
+            <AccordionSummary
+          expandIcon={<Icon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>{item.Species}</Typography>
+        </AccordionSummary>
+            <AccordionDetails>
+<Card sx={{ maxWidth: 300 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="180"
+          image={item.Picture}
+          alt={item.Species}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+          {item.Species}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          {item.Description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+        </CardActionArea>
+          </Card>
+          </AccordionDetails>
+          </Accordion>
+        </Fragment>
+      ))}
 </div>
 
     <div style={style4}>
