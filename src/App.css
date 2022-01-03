@@ -2,6 +2,10 @@
 
 .App {
   text-align: center;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -72,3 +76,4 @@
   background: #efefef;
   text-align: center;
 }
+

@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { CardActions } from '@mui/material';
+import { Button } from '@mui/material';
 import { Accordion } from "@mui/material";
 import { AccordionSummary } from "@mui/material";
 import { AccordionDetails } from "@mui/material";
@@ -34,23 +36,19 @@ function App() {
 
   const style1={
     background:"#636F57", 
-    fontSize:"20px",
     padding:"30px", 
     borderRadius:"90px",
-    color:"white",
     justifyContent: "center",
     alignItems: "center",
     width:"auto",
-    flex: "1px"
-    
+    alignSelf:"center",
+    paddingLeft:"120px"
+   
   }
   const style2={
     fontSize:"25px",
     borderRadius:"90px",
-    display: "flex", 
-    
-
-
+    display: "flex"
   }
   const style3={
     background:"#548B54",
@@ -90,14 +88,7 @@ function App() {
     display:"flex",  
    fontSize:"25px",
   }
-  const nameblock={
-    margin: "auto",
-    height:"300px",
-    borderRadius:"90px",
-   display:"flex",  
-   fontSize:"30px",
-   padding:"30px"
-  }
+
   const imageblock={
     margin: "auto",
     borderRadius:"90px",
@@ -115,19 +106,25 @@ function App() {
   return (
     
     <div style={main}>
-      <div id="demo" style={style1} onMouseEnter={changeBackground}onMouseOut={changeBackground2}>
+      <div style={style1} onMouseEnter={changeBackground}onMouseOut={changeBackground2}>
      
          <img src="header.png" alt="icon" class="center"  style={{
-           height:"160px",
+           height:"140px",
            alignSelf:"center",
-           width:"auto"
+           width:"auto",
           }}></img>
-           
        </div>
-       
           <div style={style2}>
             <div style={imageblock}>
-            <Stack spacing={2}>
+            <Accordion>
+            <AccordionSummary
+          expandIcon={<Icon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Alpine Frog</Typography>
+        </AccordionSummary>
+            <AccordionDetails>
 <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
         <CardMedia
@@ -146,9 +143,24 @@ function App() {
 
           </Typography>
         </CardContent>
+        <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
         </CardActionArea>
           </Card>
+          </AccordionDetails>
+          </Accordion>
 
+          <Accordion>
+            <AccordionSummary
+          expandIcon={<Icon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Elephants</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
       <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
         <CardMedia
@@ -167,8 +179,14 @@ function App() {
 
           </Typography>
         </CardContent>
+        <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
       </CardActionArea>
             </Card>
+            </AccordionDetails>
+            </Accordion>
 
             <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
@@ -188,11 +206,12 @@ function App() {
 
           </Typography>
         </CardContent>
+        <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
       </CardActionArea>
     </Card>
-
-    
-    </Stack>  
 </div>
 
     <div style={style4}>
