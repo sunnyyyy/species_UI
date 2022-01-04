@@ -1,4 +1,3 @@
-import 'react-slideshow-image/dist/styles.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -12,11 +11,14 @@ import { AccordionDetails } from "@mui/material";
 import { Icon } from "@mui/material";
 import React, { useEffect, useState, Fragment } from "react";
 import Papa from 'papaparse';
+import './App.css'; 
+
+
 
 function App() {
 
   const [data, setData] = useState([]);
-
+   
   useEffect(() => {
     Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vSd9H_z9WG4plW3fM17uOHyV92zrg4SHi1jZzS48MpJSQwj9VyMt1B38CREDkHul9pfoZc0OhTnTGRa/pub?output=csv', {
     download: true,
@@ -99,16 +101,19 @@ function App() {
   }
   function changeBackground(e) {
     document.getElementById("demo").style.cursor = "pointer";
+    e.target.style.opacity="0.8"; 
   }
 
   function changeBackground2(e) {
+    e.target.style.opacity="1"; 
+
   }
   return (
     
     <div style={main}>
-      <div style={style1} onMouseEnter={changeBackground}onMouseOut={changeBackground2}>
+      <div style={style1} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
      
-         <img src="header.png" alt="icon" class="center"  style={{
+         <img src="header.png" alt="icon" class="center" style={{
            height:"140px",
            alignSelf:"center",
            width:"auto",
@@ -284,9 +289,8 @@ This website, by the digital artist Sunni (Yu Husuan Liao), provides a place for
      
       
       </div>
-     
       <div id="demo" style={style3} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
-
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0M5ieEZEj6668C0F5uE4qRCkmwqQD_f4nJ5fwjwole9i54w/viewform?usp=sf_link" target="_blank">
 <p>ADD TO THE PROJECT///PROTECT AND MAP ECOLOGIES
 THIN OF A SPECIES AT RISK OF EXTINCTION OR CONTRIBUTE TO ONE ALREADY POSTED. TELL ITS STORY.</p>
 <p>
@@ -307,7 +311,7 @@ What affects both your life and this specie’s life?
 What living things do you both depend on?
 Do you depend on each other ecologically?
 What about your futures? What about your pasts?
-
+</a>
   </div>
   <div style={style5}>
      THIS IS A CREATE RESEARCH PROJECT FOR THE COURSE ‘DESIGNING POLITICS’ FOR THE MA ART AND POLITICS PROGRAMME
