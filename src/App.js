@@ -290,7 +290,7 @@ This website, by the digital artist Sunni (Yu Husuan Liao), provides a place for
       
       </div>
       <div id="demo" style={style3} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0M5ieEZEj6668C0F5uE4qRCkmwqQD_f4nJ5fwjwole9i54w/viewform?usp=sf_link" target="_blank">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0M5ieEZEj6668C0F5uE4qRCkmwqQD_f4nJ5fwjwole9i54w/viewform?usp=sf_link" target="_blank" rel="noreferrer">
 <p>ADD TO THE PROJECT///PROTECT AND MAP ECOLOGIES
 THIN OF A SPECIES AT RISK OF EXTINCTION OR CONTRIBUTE TO ONE ALREADY POSTED. TELL ITS STORY.</p>
 <p>
