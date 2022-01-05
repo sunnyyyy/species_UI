@@ -60,8 +60,6 @@ function App() {
     paddingTop:"10px",
     margin:"0px",
     fontSize:"30px",
-    
-
   }
   const style4={
     background:"grey", 
@@ -118,6 +116,8 @@ function App() {
            alignSelf:"center",
            width:"auto",
           }}></img>
+           
+          
        </div>
           <div style={style2}>
             <div style={imageblock}>
@@ -222,7 +222,7 @@ function App() {
         <Fragment key={i}>
     <Accordion>
             <AccordionSummary
-          expandIcon={<Icon />}
+          expandIcon={<Icon/>}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -234,7 +234,7 @@ function App() {
         <CardMedia
           component="img"
           height="180"
-          image={item.Picture}
+          src={item.Picture}
           alt={item.Species}
         />
         <CardContent>
