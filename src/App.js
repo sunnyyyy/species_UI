@@ -341,7 +341,7 @@ What about your futures? What about your pasts?
       </div>  
 </div>
 <div style={{backgroundColor:"#78AB46", borderRadius:"50px", padding:"20px", fontSize:"40px",textAlign:"center"}}>
-CONTACT: STORIESFORSPECIES@GMAIL.COM</div>     
+CONTACT: storiesforspecies@gmail.com</div>     
 </div>
 
   )
