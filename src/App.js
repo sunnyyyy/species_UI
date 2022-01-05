@@ -260,7 +260,7 @@ function App() {
     <div style={style4}>
       <Accordion>
         <AccordionSummary
-          expandIcon={<Icon />}
+          expandIcon={<Icon/>}
           aria-controls="panel1a-content"
           id="Details"
         >
