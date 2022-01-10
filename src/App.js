@@ -12,6 +12,7 @@ import { Icon } from "@mui/material";
 import React, { useEffect, useState, Fragment } from "react";
 import Papa from 'papaparse';
 import './App.css'; 
+import { AiFillCaretDown } from "react-icons/ai";
 
 
 
@@ -128,7 +129,7 @@ function App() {
             <div style={imageblock}>
             <Accordion>
             <AccordionSummary
-          expandIcon={<Icon />}
+          expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -163,7 +164,7 @@ function App() {
 
           <Accordion>
             <AccordionSummary
-          expandIcon={<Icon />}
+          expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -226,7 +227,7 @@ share our world, the same way the Elephants have had to accommodate us within th
         <Fragment key={i}>
     <Accordion>
             <AccordionSummary
-          expandIcon={<Icon/>}
+          expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -263,7 +264,7 @@ share our world, the same way the Elephants have had to accommodate us within th
     <div style={style4}>
       <Accordion>
         <AccordionSummary
-          expandIcon={<Icon/>}
+          expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
           id="Details"
         >
