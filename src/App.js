@@ -34,7 +34,9 @@ function App() {
   }, []);
 
   const main={
-    flex: "1px"
+    flex: "1px",
+    fontFamily: 'Titillium Web'
+
   }
 
   const style1={
@@ -52,7 +54,8 @@ function App() {
     fontSize:"25px",
     borderRadius:"90px",
     display: "flex",
-    paddingTop:"0px"
+    paddingTop:"0px",
+    fontFamily: 'Titillium Web'
   }
   const style3={
     background:"#548B54",
@@ -84,7 +87,7 @@ function App() {
   }
   const block={
     margin: "auto",
-    height:"300px",
+    height:"350px",
     borderRadius:"90px",
     backgroundColor:"white",
     display:"flex",  
@@ -129,7 +132,7 @@ function App() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Alpine Frog</Typography>
+          <Typography style={{fontFamily: 'Titillium Web'}}>Alpine Frog</Typography>
         </AccordionSummary>
             <AccordionDetails>
 <Card sx={{ maxWidth: 300 }}>
@@ -141,7 +144,7 @@ function App() {
           alt="ALPINE FROG"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Alpine frog
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -151,7 +154,6 @@ function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
         </CardActionArea>
@@ -165,7 +167,7 @@ function App() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Elephants</Typography>
+          <Typography style={{fontFamily: 'Titillium Web'}}>Elephants</Typography>
         </AccordionSummary>
         <AccordionDetails>
       <Card sx={{ maxWidth: 300 }}>
@@ -177,17 +179,17 @@ function App() {
           alt="Elephants"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Elephants
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          “Lots of frogs are at risk of extinction due to climate change.
-          Is it fair to build up our homes at the cost of theirs?"
+          Elephant lineage can be traced back 55 million years, long before the presence of humans. Especially across Asia and Africa, Elephants are being forced out of their natural habitats and pushed into human environments, a consequence of over consumption and resource
+exploitation. It is our role as humans to preserve the stories of those in danger. We will have to learn to
+share our world, the same way the Elephants have had to accommodate us within theirs.
 
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
       </CardActionArea>
@@ -204,7 +206,7 @@ function App() {
           alt="Hummingbirds"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Hummingbirds
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -214,14 +216,13 @@ function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
       </CardActionArea>
     </Card>
 
     {data.map((item, i) => { 
-      const imageUrl = item.Picture.replace("https://drive.google.com/open?id=", "https://drive.google.com/uc?export=view&id=")
+      const imageUrl = item.Upload.replace("https://drive.google.com/open?id=", "https://drive.google.com/uc?export=view&id=")
       return (
         <Fragment key={i}>
     <Accordion>
@@ -230,7 +231,7 @@ function App() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>{item.Species}</Typography>
+          <Typography style={{fontFamily: 'Titillium Web'}}>{item.Species}</Typography>
         </AccordionSummary>
             <AccordionDetails>
 <Card sx={{ maxWidth: 300 }}>
@@ -242,7 +243,7 @@ function App() {
           alt={item.Species}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           {item.Species}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -250,7 +251,6 @@ function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
         </CardActionArea>
@@ -268,7 +268,7 @@ function App() {
           aria-controls="panel1a-content"
           id="Details"
         >
-          <Typography> Welcome to STORIESFORSPECIES.COM</Typography>
+          <Typography style={{fontFamily: 'Titillium Web'}}> Welcome to STORIESFORSPECIES.COM</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
