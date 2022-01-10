@@ -17,6 +17,8 @@ import './App.css';
 
 function App() {
 
+
+
   const [data, setData] = useState([]);
    
   useEffect(() => {
@@ -218,7 +220,9 @@ function App() {
       </CardActionArea>
     </Card>
 
-    {data.map((item, i) => (
+    {data.map((item, i) => { 
+      const imageUrl = item.Picture.replace("https://drive.google.com/open?id=", "https://drive.google.com/uc?export=view&id=")
+      return (
         <Fragment key={i}>
     <Accordion>
             <AccordionSummary
@@ -234,7 +238,7 @@ function App() {
         <CardMedia
           component="img"
           height="180"
-          src={item.Picture}
+          src={imageUrl}
           alt={item.Species}
         />
         <CardContent>
@@ -254,7 +258,7 @@ function App() {
           </AccordionDetails>
           </Accordion>
         </Fragment>
-      ))}
+      )})}
 </div>
 
     <div style={style4}>
