@@ -115,13 +115,13 @@ function App() {
     
     <div style={main}>
       <div style={style1} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
-     
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0M5ieEZEj6668C0F5uE4qRCkmwqQD_f4nJ5fwjwole9i54w/viewform?usp=sf_link" target="_blank" rel="noreferrer noopener">
          <img src="header.png" alt="icon" class="center" style={{
            height:"140px",
            alignSelf:"center",
            width:"auto",
           }}></img>
-           
+           </a>
           
        </div>
           <div style={style2}>
@@ -154,7 +154,6 @@ function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Learn More</Button>
       </CardActions>
         </CardActionArea>
           </Card>
@@ -190,7 +189,6 @@ share our world, the same way the Elephants have had to accommodate us within th
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Learn More</Button>
       </CardActions>
       </CardActionArea>
             </Card>
@@ -215,7 +213,6 @@ share our world, the same way the Elephants have had to accommodate us within th
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Learn More</Button>
       </CardActions>
       </CardActionArea>
     </Card>
@@ -250,7 +247,6 @@ share our world, the same way the Elephants have had to accommodate us within th
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Learn More</Button>
       </CardActions>
         </CardActionArea>
           </Card>
@@ -294,8 +290,8 @@ This website, by the digital artist Sunni (Yu Husuan Liao), provides a place for
       </div>
       <div id="demo" style={style3} onMouseEnter={changeBackground} onMouseOut={changeBackground2}>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0M5ieEZEj6668C0F5uE4qRCkmwqQD_f4nJ5fwjwole9i54w/viewform?usp=sf_link" target="_blank" rel="noreferrer noopener">
-<p>ADD TO THE PROJECT///PROTECT AND MAP ECOLOGIES
-THIN OF A SPECIES AT RISK OF EXTINCTION OR CONTRIBUTE TO ONE ALREADY POSTED. TELL ITS STORY.</p>
+<p>ADD TO THE PROJECT///PROTECT AND MAP ECOLOGIES<br/>
+THINK OF A SPECIES AT RISK OF EXTINCTION OR CONTRIBUTE TO ONE ALREADY POSTED. TELL ITS STORY.</p>
 <p>
 Do this through
 Writing something:
