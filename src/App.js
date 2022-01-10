@@ -210,8 +210,7 @@ share our world, the same way the Elephants have had to accommodate us within th
           Hummingbirds
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          “Lots of frogs are at risk of extinction due to climate change.
-          Is it fair to build up our homes at the cost of theirs?"
+          Hummingbirds, the symbol of joy, healing and harmony, have a 22-million-year history. They have constantly reinvented themselves, and there are now 338 species dispersed throughout the world. The growing destruction of the natural environment and pesticides used in agriculture are endangering humming birds. Particularly in South America, there are 7 species of humming birds at risk of 50% change of extinction within 10 years. As hummingbirds have brought joy into our world, humans need to preserve their magical beauty with harmony.
 
           </Typography>
         </CardContent>
