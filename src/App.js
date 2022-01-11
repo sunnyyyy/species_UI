@@ -6,27 +6,19 @@ import { CardActionArea } from '@mui/material';
 import { Accordion } from "@mui/material";
 import { AccordionSummary } from "@mui/material";
 import { AccordionDetails } from "@mui/material";
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment} from "react";
 import Papa from 'papaparse';
 import './App.css'; 
 import { AiFillCaretDown } from "react-icons/ai";
-import Backdrop from '@mui/material/Backdrop';
+import Image from "react-image-enlarger";
+
 
 
 
 function App() {
-
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
-
+  const [zoomed, setZoomed] = React.useState(false);
   const [data, setData] = useState([]);
-   
-  useEffect(() => {
+    useEffect(() => {
     Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vSd9H_z9WG4plW3fM17uOHyV92zrg4SHi1jZzS48MpJSQwj9VyMt1B38CREDkHul9pfoZc0OhTnTGRa/pub?output=csv', {
     download: true,
     header: true,
@@ -124,15 +116,17 @@ function App() {
          <img src="header.png" alt="icon" class="center" style={{
            height:"140px",
            alignSelf:"center",
-           width:"auto",
-          }}></img>
+           width:"auto"
+          }}
+         ></img>
            </a>
           
        </div>
+          
           <div style={style2}>
             <div style={imageblock} >
 
-            <Accordion >
+            <Accordion defaultExpanded={true}>
             <AccordionSummary
           expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
@@ -145,36 +139,30 @@ function App() {
 <Card sx={{ maxWidth: 300 }} >
 
       <CardActionArea >
-         <div onClick={handleToggle}>
-        <CardMedia
-          component="img"
-          height="180"
-          image="1.jpeg"
-          alt="ALPINE FROG"
-        />
-          <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
-        onClick={handleClose}
-      >
-        <img src="1.jpeg" alt="Alpine frog" class="center"></img>
-        </Backdrop>
+      <Image
+        zoomed={zoomed}
+        src="1.jpeg"
+        onClick={() => setZoomed(true)}
+        onRequestClose={() => setZoomed(false)}
+      />
+       
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Alpine frog
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          “Lots of frogs are at risk of extinction due to climate change.
-          Is it fair to build up our homes at the cost of theirs?"
-
+          Lots of frogs are at risk of extinction due to climate change.<br/>
+          Is it fair to build up our homes at the cost of theirs?
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          Contributor: Tahira Ismat
           </Typography>
         </CardContent>
-      </div>
+     
         </CardActionArea>
           </Card>
           </AccordionDetails>
           </Accordion>
-          
 
           <Accordion  >
             <AccordionSummary
@@ -187,21 +175,13 @@ function App() {
         <AccordionDetails>
       <Card sx={{ maxWidth: 300 }}>
       <CardActionArea >
-      <div onClick={handleToggle}>
-        <CardMedia
-          component="img"
-          height="180"
-          image="2.jpeg"
-          alt="Elephants"
-        />
-        <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
-        onClick={handleClose}
-      >
-        <img src="2.jpeg" alt="Elephants" class="center"></img>
-              </Backdrop>
-
+      <Image
+        zoomed={zoomed}
+        src="2.jpeg"
+        onClick={() => setZoomed(true)}
+        onRequestClose={() => setZoomed(false)}
+      />
+      
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Elephants
@@ -210,45 +190,52 @@ function App() {
           Elephant lineage can be traced back 55 million years, long before the presence of humans. Especially across Asia and Africa, Elephants are being forced out of their natural habitats and pushed into human environments, a consequence of over consumption and resource
 exploitation. It is our role as humans to preserve the stories of those in danger. We will have to learn to
 share our world, the same way the Elephants have had to accommodate us within theirs.
-
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          Contributor: Similola Musa
           </Typography>
         </CardContent>
-      </div>
+     
       </CardActionArea>
             </Card>
             </AccordionDetails>
             </Accordion>
 
-           
+            <Accordion>
+            <AccordionSummary
+          expandIcon={<AiFillCaretDown />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+          
+        >
+          <Typography style={{fontFamily: 'Titillium Web'}}>Hummingbirds</Typography>
+        </AccordionSummary>
+            <AccordionDetails>
             <Card sx={{ maxWidth: 300 }}  >
       <CardActionArea>
-      <div onClick={handleToggle}>
-        <CardMedia
-          component="img"
-          height="180"
-          image="3.jpeg"
-          alt="Hummingbirds"
-        />
-         <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
-        onClick={handleClose}
-      >
-        <img src="3.jpeg" alt="Hummingbirds" class="center"></img>
-
-              </Backdrop>
+      <Image
+        zoomed={zoomed}
+        src="3.jpeg"
+        onClick={() => setZoomed(true)}
+        onRequestClose={() => setZoomed(false)}
+      />
+        
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Hummingbirds
           </Typography>
           <Typography variant="body2" color="text.secondary">
           Hummingbirds, the symbol of joy, healing and harmony, have a 22-million-year history. They have constantly reinvented themselves, and there are now 338 species dispersed throughout the world. The growing destruction of the natural environment and pesticides used in agriculture are endangering humming birds. Particularly in South America, there are 7 species of humming birds at risk of 50% change of extinction within 10 years. As hummingbirds have brought joy into our world, humans need to preserve their magical beauty with harmony.
-
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          Contributor: Eva Tollett
           </Typography>
         </CardContent>
-      </div>
+     
       </CardActionArea>
     </Card>
+    </AccordionDetails>
+  </Accordion>
     
 
     {data.map((item, i) => { 
@@ -260,37 +247,27 @@ share our world, the same way the Elephants have had to accommodate us within th
           expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          
         >
           <Typography style={{fontFamily: 'Titillium Web'}}>{item.Species}</Typography>
         </AccordionSummary>
             <AccordionDetails>
 <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
-      <div onClick={handleToggle}>
-        <CardMedia
-          component="img"
-          height="180"
-          src={imageUrl}
-          alt={item.Species}
-        />
-          <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
-        onClick={handleClose}
-      >
-        <img src={imageUrl} alt="Alpine frog" class="center"></img>
-
-              </Backdrop>
+      <Image
+        zoomed={zoomed}
+        src={imageUrl}
+        onClick={() => setZoomed(true)}
+        onRequestClose={() => setZoomed(false)}
+      />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           {item.Species}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {item.Description}
+          {item.Description}<br/>
+          Contributor:{item.Contributors} 
           </Typography>
         </CardContent>
-        </div>
         </CardActionArea>
           </Card>
           </AccordionDetails>
