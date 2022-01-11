@@ -259,7 +259,7 @@ share our world, the same way the Elephants have had to accommodate us within th
           </Typography>
           <Typography variant="body2" color="text.secondary">
           {item.Description}<br/>
-          Contributor:{item.Contributors} 
+          Contributor:{item.Contributor}
           </Typography>
         </CardContent>
         </CardActionArea>
