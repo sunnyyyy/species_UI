@@ -11,12 +11,19 @@ import React, { useEffect, useState, Fragment } from "react";
 import Papa from 'papaparse';
 import './App.css'; 
 import { AiFillCaretDown } from "react-icons/ai";
+import Backdrop from '@mui/material/Backdrop';
 
 
 
 function App() {
 
-
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
   const [data, setData] = useState([]);
    
@@ -124,8 +131,9 @@ function App() {
           
        </div>
           <div style={style2}>
-            <div style={imageblock}>
-            <Accordion>
+            <div style={imageblock} >
+
+            <Accordion >
             <AccordionSummary
           expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
@@ -133,15 +141,26 @@ function App() {
         >
           <Typography style={{fontFamily: 'Titillium Web'}}>Alpine Frog</Typography>
         </AccordionSummary>
-            <AccordionDetails>
-<Card sx={{ maxWidth: 300 }}>
-      <CardActionArea>
+            <AccordionDetails >
+            
+<Card sx={{ maxWidth: 300 }} >
+
+      <CardActionArea  >
+     
         <CardMedia
           component="img"
           height="180"
           image="1.jpeg"
           alt="ALPINE FROG"
+          onClick={handleToggle}
         />
+          <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <img src="1.jpeg" alt="Alpine frog" class="center"></img>
+        </Backdrop>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Alpine frog
@@ -158,8 +177,9 @@ function App() {
           </Card>
           </AccordionDetails>
           </Accordion>
+          
 
-          <Accordion>
+          <Accordion  >
             <AccordionSummary
           expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
@@ -169,13 +189,23 @@ function App() {
         </AccordionSummary>
         <AccordionDetails>
       <Card sx={{ maxWidth: 300 }}>
-      <CardActionArea>
+      <CardActionArea >
+      
         <CardMedia
           component="img"
           height="180"
           image="2.jpeg"
           alt="Elephants"
+          onClick={handleToggle}
         />
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <img src="2.jpeg" alt="Elephants" class="center"></img>
+              </Backdrop>
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Elephants
@@ -194,14 +224,32 @@ share our world, the same way the Elephants have had to accommodate us within th
             </AccordionDetails>
             </Accordion>
 
-            <Card sx={{ maxWidth: 300 }}>
-      <CardActionArea>
+            <Accordion >
+            <AccordionSummary
+          expandIcon={<AiFillCaretDown />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography style={{fontFamily: 'Titillium Web'}}>Hummingbirds</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+            <Card sx={{ maxWidth: 300 }}  >
+      <CardActionArea >
         <CardMedia
           component="img"
           height="180"
           image="3.jpeg"
           alt="Hummingbirds"
+          onClick={handleToggle}
         />
+         <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <img src="3.jpeg" alt="Hummingbirds" class="center"></img>
+
+              </Backdrop>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           Hummingbirds
@@ -215,16 +263,19 @@ share our world, the same way the Elephants have had to accommodate us within th
       </CardActions>
       </CardActionArea>
     </Card>
+    </AccordionDetails>
+    </Accordion>
 
     {data.map((item, i) => { 
       const imageUrl = item.Upload.replace("https://drive.google.com/open?id=", "https://drive.google.com/uc?export=view&id=")
       return (
         <Fragment key={i}>
-    <Accordion>
+    <Accordion >
             <AccordionSummary
           expandIcon={<AiFillCaretDown />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          
         >
           <Typography style={{fontFamily: 'Titillium Web'}}>{item.Species}</Typography>
         </AccordionSummary>
@@ -236,7 +287,16 @@ share our world, the same way the Elephants have had to accommodate us within th
           height="180"
           src={imageUrl}
           alt={item.Species}
+          onClick={handleToggle}
         />
+          <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <img src={imageUrl} alt="Alpine frog" class="center"></img>
+
+              </Backdrop>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           {item.Species}
@@ -267,12 +327,12 @@ share our world, the same way the Elephants have had to accommodate us within th
         <AccordionDetails>
           <Typography>
 
-STORIES MAKE THE FUTURE
+STORIES MAKE THE FUTURE<br/>
 How can creating and sharing stories forge a better future?
-
+<p>
 This project is made by, for, and with young people. It asks:
 How can creativity and story-telling help channel feelings of eco-anxiety, into political action, centered on generating positive change?
-
+</p>
 Young people are suffering from the effects of living with the knowledge of a worsening global catastrophe. Terms such as “eco-anxiety” and “pre-traumatic stress syndrome” have been employed to define this suffering and its corresponding symptoms, which are direct results of the climate crisis and climate inaction. 
 
 This project developed out of two workshops held with students from a secondary school in London. Our aim for this project, determined in collaboration with workshop attendees, became how to draw attention to humanity's position in, and relationship to nature. This was accomplished through the students telling the stories of animals at risk of extinction. Story-telling, exploring the lives and relations of species on the brink of extinction, thus became a way to critically think about humanity's relationship with nature. Such critical thinking creates space for new ideas to emerge regarding how to approach, understand, and mitigate human harm to the planet.
@@ -312,7 +372,7 @@ What about your futures? What about your pasts?
 </a>
   </div>
   <div style={style5}>
-     THIS IS A CREATE RESEARCH PROJECT FOR THE COURSE ‘DESIGNING POLITICS’ FOR THE MA ART AND POLITICS PROGRAMME
+     THIS IS A CREATIVE RESEARCH PROJECT FOR THE COURSE ‘DESIGNING POLITICS’ FOR THE MA ART AND POLITICS PROGRAMME
       AT THE UNIVERSITY OF LONDON  <br />
      KATHERINE DICK  <br />
       MEGAN CROSSLAND  <br />
@@ -328,7 +388,7 @@ What about your futures? What about your pasts?
       <div style={{backgroundColor:"#31B94D", borderRadius:"50px", padding:"20px"}}>
       “Art and climate can go together, I think that art has a place in almost anything. It allows us to be more open to ideas and inclusive to other people”      </div>
     <div style={{backgroundColor:"#96C8A2", borderRadius:"50px", padding:"20px"}}>
-“More hopeful about how different disciplines/fields can come together to help tackle climate change.”  </div>
+“I feel more hopeful about how different disciplines/fields can come together to help tackle climate change.”  </div>
 <div style={{backgroundColor:"#1DA237", borderRadius:"50px", padding:"20px"}}>
 “I think art plays a role in politics of climate change because it presents the information in a more accessible way that can appeal to younger and less-aware audiences”  </div>
 <div style={{backgroundColor:"#3EA055", borderRadius:"50px", padding:"20px"}}>
