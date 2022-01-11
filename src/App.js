@@ -3,7 +3,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { CardActions } from '@mui/material';
 import { Accordion } from "@mui/material";
 import { AccordionSummary } from "@mui/material";
 import { AccordionDetails } from "@mui/material";
@@ -145,14 +144,13 @@ function App() {
             
 <Card sx={{ maxWidth: 300 }} >
 
-      <CardActionArea  >
-     
+      <CardActionArea >
+         <div onClick={handleToggle}>
         <CardMedia
           component="img"
           height="180"
           image="1.jpeg"
           alt="ALPINE FROG"
-          onClick={handleToggle}
         />
           <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -171,8 +169,7 @@ function App() {
 
           </Typography>
         </CardContent>
-        <CardActions>
-      </CardActions>
+      </div>
         </CardActionArea>
           </Card>
           </AccordionDetails>
@@ -190,13 +187,12 @@ function App() {
         <AccordionDetails>
       <Card sx={{ maxWidth: 300 }}>
       <CardActionArea >
-      
+      <div onClick={handleToggle}>
         <CardMedia
           component="img"
           height="180"
           image="2.jpeg"
           alt="Elephants"
-          onClick={handleToggle}
         />
         <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -217,30 +213,21 @@ share our world, the same way the Elephants have had to accommodate us within th
 
           </Typography>
         </CardContent>
-        <CardActions>
-      </CardActions>
+      </div>
       </CardActionArea>
             </Card>
             </AccordionDetails>
             </Accordion>
 
-            <Accordion >
-            <AccordionSummary
-          expandIcon={<AiFillCaretDown />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography style={{fontFamily: 'Titillium Web'}}>Hummingbirds</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
+           
             <Card sx={{ maxWidth: 300 }}  >
-      <CardActionArea >
+      <CardActionArea>
+      <div onClick={handleToggle}>
         <CardMedia
           component="img"
           height="180"
           image="3.jpeg"
           alt="Hummingbirds"
-          onClick={handleToggle}
         />
          <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -259,12 +246,10 @@ share our world, the same way the Elephants have had to accommodate us within th
 
           </Typography>
         </CardContent>
-        <CardActions>
-      </CardActions>
+      </div>
       </CardActionArea>
     </Card>
-    </AccordionDetails>
-    </Accordion>
+    
 
     {data.map((item, i) => { 
       const imageUrl = item.Upload.replace("https://drive.google.com/open?id=", "https://drive.google.com/uc?export=view&id=")
@@ -282,12 +267,12 @@ share our world, the same way the Elephants have had to accommodate us within th
             <AccordionDetails>
 <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
+      <div onClick={handleToggle}>
         <CardMedia
           component="img"
           height="180"
           src={imageUrl}
           alt={item.Species}
-          onClick={handleToggle}
         />
           <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -305,8 +290,7 @@ share our world, the same way the Elephants have had to accommodate us within th
           {item.Description}
           </Typography>
         </CardContent>
-        <CardActions>
-      </CardActions>
+        </div>
         </CardActionArea>
           </Card>
           </AccordionDetails>
