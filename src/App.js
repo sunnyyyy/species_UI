@@ -15,7 +15,7 @@ import Image from "react-image-enlarger";
 
 
 function App() {
-  const [zoomed, setZoomed] = React.useState(false);
+  
   const [data, setData] = useState([]);
     useEffect(() => {
     Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vSd9H_z9WG4plW3fM17uOHyV92zrg4SHi1jZzS48MpJSQwj9VyMt1B38CREDkHul9pfoZc0OhTnTGRa/pub?output=csv', {
@@ -107,6 +107,21 @@ function App() {
     e.target.style.opacity="1"; 
 
   }
+  function SingleSource({ src }) {
+    const [zoomed, setZoomed] = React.useState(false);
+  
+    return (
+      <div style={{ margin: "0.25rem" }}>
+        <Image
+          style={{ width: "200px", height: "auto" }}
+          zoomed={zoomed}
+          src={src}
+          onClick={() => setZoomed(true)}
+          onRequestClose={() => setZoomed(false)}
+        />
+      </div>
+    );
+  }
   return (
     
     <div style={main}>
@@ -138,12 +153,7 @@ function App() {
 <Card sx={{ maxWidth: 300 }} >
 
       <CardActionArea >
-      <Image
-        zoomed={zoomed}
-        src="1.jpeg"
-        onClick={() => setZoomed(true)}
-        onRequestClose={() => setZoomed(false)}
-      />
+        <SingleSource src="1.jpeg" />
        
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
@@ -174,12 +184,7 @@ function App() {
         <AccordionDetails>
       <Card sx={{ maxWidth: 300 }}>
       <CardActionArea >
-      <Image
-        zoomed={zoomed}
-        src="2.jpeg"
-        onClick={() => setZoomed(true)}
-        onRequestClose={() => setZoomed(false)}
-      />
+        <SingleSource src="2.jpeg" />
       
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
@@ -212,12 +217,7 @@ share our world, the same way the Elephants have had to accommodate us within th
             <AccordionDetails>
             <Card sx={{ maxWidth: 300 }}  >
       <CardActionArea>
-      <Image
-        zoomed={zoomed}
-        src="3.jpeg"
-        onClick={() => setZoomed(true)}
-        onRequestClose={() => setZoomed(false)}
-      />
+        <SingleSource src="3.jpeg" />
         
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
@@ -252,12 +252,7 @@ share our world, the same way the Elephants have had to accommodate us within th
             <AccordionDetails>
 <Card sx={{ maxWidth: 300 }}>
       <CardActionArea>
-      <Image
-        zoomed={zoomed}
-        src={imageUrl}
-        onClick={() => setZoomed(true)}
-        onRequestClose={() => setZoomed(false)}
-      />
+        <SingleSource src={imageUrl} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" style={{fontFamily: 'Titillium Web'}}>
           {item.Species}
