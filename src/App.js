@@ -191,9 +191,7 @@ function App() {
           Elephants
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          Elephant lineage can be traced back 55 million years, long before the presence of humans. Especially across Asia and Africa, Elephants are being forced out of their natural habitats and pushed into human environments, a consequence of over consumption and resource
-exploitation. It is our role as humans to preserve the stories of those in danger. We will have to learn to
-share our world, the same way the Elephants have had to accommodate us within theirs.
+          Road between the past and present showing how populations of elephants and their habitat have been affected. Also shows the interactions between elephants and humans.
           </Typography>
           <Typography variant="body2" color="text.secondary">
           Contributor: Similola Musa
